@@ -77,18 +77,18 @@ Partial Class DartGame
         Me.DartLabel.AutoSize = True
         Me.DartLabel.Location = New System.Drawing.Point(97, 23)
         Me.DartLabel.Name = "DartLabel"
-        Me.DartLabel.Size = New System.Drawing.Size(30, 13)
+        Me.DartLabel.Size = New System.Drawing.Size(39, 13)
         Me.DartLabel.TabIndex = 2
-        Me.DartLabel.Text = "Dart:"
+        Me.DartLabel.Text = "Dart: 0"
         '
         'TurnLabel
         '
         Me.TurnLabel.AutoSize = True
         Me.TurnLabel.Location = New System.Drawing.Point(7, 23)
         Me.TurnLabel.Name = "TurnLabel"
-        Me.TurnLabel.Size = New System.Drawing.Size(32, 13)
+        Me.TurnLabel.Size = New System.Drawing.Size(41, 13)
         Me.TurnLabel.TabIndex = 2
-        Me.TurnLabel.Text = "Turn:"
+        Me.TurnLabel.Text = "Turn: 0"
         '
         'DartBoardPictureBox
         '
