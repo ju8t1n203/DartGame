@@ -26,12 +26,12 @@ Partial Class DartGame
         Me.ViewSummaryButton = New System.Windows.Forms.Button()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.StatsGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TurnLabel = New System.Windows.Forms.Label()
         Me.DartLabel = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TurnLabel = New System.Windows.Forms.Label()
+        Me.DartBoardPictureBox = New System.Windows.Forms.PictureBox()
         Me.InstructionsLabel = New System.Windows.Forms.Label()
         Me.StatsGroupBox.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DartBoardPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NewTurnButton
@@ -72,15 +72,6 @@ Partial Class DartGame
         Me.StatsGroupBox.TabStop = False
         Me.StatsGroupBox.Text = "Stats"
         '
-        'TurnLabel
-        '
-        Me.TurnLabel.AutoSize = True
-        Me.TurnLabel.Location = New System.Drawing.Point(7, 23)
-        Me.TurnLabel.Name = "TurnLabel"
-        Me.TurnLabel.Size = New System.Drawing.Size(32, 13)
-        Me.TurnLabel.TabIndex = 2
-        Me.TurnLabel.Text = "Turn:"
-        '
         'DartLabel
         '
         Me.DartLabel.AutoSize = True
@@ -90,14 +81,23 @@ Partial Class DartGame
         Me.DartLabel.TabIndex = 2
         Me.DartLabel.Text = "Dart:"
         '
-        'PictureBox1
+        'TurnLabel
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 26)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(599, 344)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
+        Me.TurnLabel.AutoSize = True
+        Me.TurnLabel.Location = New System.Drawing.Point(7, 23)
+        Me.TurnLabel.Name = "TurnLabel"
+        Me.TurnLabel.Size = New System.Drawing.Size(32, 13)
+        Me.TurnLabel.TabIndex = 2
+        Me.TurnLabel.Text = "Turn:"
+        '
+        'DartBoardPictureBox
+        '
+        Me.DartBoardPictureBox.BackColor = System.Drawing.Color.White
+        Me.DartBoardPictureBox.Location = New System.Drawing.Point(12, 26)
+        Me.DartBoardPictureBox.Name = "DartBoardPictureBox"
+        Me.DartBoardPictureBox.Size = New System.Drawing.Size(599, 344)
+        Me.DartBoardPictureBox.TabIndex = 2
+        Me.DartBoardPictureBox.TabStop = False
         '
         'InstructionsLabel
         '
@@ -114,7 +114,7 @@ Partial Class DartGame
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(623, 450)
         Me.Controls.Add(Me.InstructionsLabel)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.DartBoardPictureBox)
         Me.Controls.Add(Me.StatsGroupBox)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ViewSummaryButton)
@@ -125,7 +125,7 @@ Partial Class DartGame
         Me.Text = "Darts"
         Me.StatsGroupBox.ResumeLayout(False)
         Me.StatsGroupBox.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DartBoardPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -137,6 +137,6 @@ Partial Class DartGame
     Friend WithEvents StatsGroupBox As GroupBox
     Friend WithEvents TurnLabel As Label
     Friend WithEvents DartLabel As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DartBoardPictureBox As PictureBox
     Friend WithEvents InstructionsLabel As Label
 End Class
