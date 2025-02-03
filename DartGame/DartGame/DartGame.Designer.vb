@@ -36,6 +36,7 @@ Partial Class DartGame
         '
         'NewTurnButton
         '
+        Me.NewTurnButton.Enabled = False
         Me.NewTurnButton.Location = New System.Drawing.Point(210, 389)
         Me.NewTurnButton.Name = "NewTurnButton"
         Me.NewTurnButton.Size = New System.Drawing.Size(131, 54)

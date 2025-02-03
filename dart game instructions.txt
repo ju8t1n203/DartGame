@@ -1,14 +1,14 @@
 dart game
 ------------
---user throws three darts per game
---darts land in random positions, show impact
---user presses space bar to throw darts
---continue, quit buttons
+--user throws three darts per game+=+done
+--darts land in random positions, show impact+=+done
+--user presses space bar to throw darts+=+done
+--continue, quit buttons+=+done
 --sequential file, track position of each dart for each turn
 -----(turn, dart#, x coordinate, y coordinate) show score after all darts
 -----ex:
 		Turn: 1	Dart:1	X Coordinate: 123.456	Y Coordinate:123.456
 		Turn: 1	Dart:2	X Coordinate: 123.456	Y Coordinate:123.456
 		Turn: 1	Dart:3	X Coordinate: 123.456	Y Coordinate:123.456
-		Score: 147
+		Score: 147 'this is extra
 --user can view turn record

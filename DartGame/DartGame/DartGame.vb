@@ -10,10 +10,12 @@ Option Strict On
 Public Class DartGame
     Dim dartCount As Integer
     Dim turnCount As Integer
+
     Private Sub DartGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
     End Sub
 
+    'dart stuff----------------
     Private Sub DartGame_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Space And dartCount < 3 Then
             DrawDart()
@@ -23,6 +25,7 @@ Public Class DartGame
             'when space is pressed a dart is added to the board
         Else
             InstructionsLabel.Text = "Out of darts, start new turn"
+            NewTurnButton.Enabled = True
             e.Handled = True
         End If
 
@@ -43,6 +46,7 @@ Public Class DartGame
         'creates a random number in a specified range
     End Function
 
+    'buttons-------------------
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
@@ -54,7 +58,7 @@ Public Class DartGame
         TurnLabel.Text = $"Turn: {turnCount}"
         DartBoardPictureBox.Image = Nothing
         InstructionsLabel.Text = "Press space to throw darts"
+        NewTurnButton.Enabled = False
     End Sub
 
 End Class
-
