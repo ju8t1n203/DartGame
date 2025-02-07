@@ -60,6 +60,11 @@ Public Class DartGame
 
     'buttons-------------------
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        'clears the the summary file
+        If File.Exists(filePath) Then
+            File.WriteAllText(filePath, String.Empty)
+        End If
+
         Me.Close()
     End Sub
 
