@@ -9,7 +9,7 @@ Option Strict On
 Imports System.IO
 Public Class DartGame
     Dim dartCount As Integer
-    Dim turnCount As Integer
+    Dim turnCount As Integer = 1
     Dim filePath As String = IO.Path.Combine(Application.StartupPath, "..\..\..\Summary.txt")
 
     Private Sub DartGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,6 +24,7 @@ Public Class DartGame
             e.Handled = True
             dartCount += 1
             DartLabel.Text = $"Dart: {dartCount}"
+            TurnLabel.Text = $"Turn: {turnCount}"
             'stops adding darts to the board
             If dartCount = 3 Then
                 InstructionsLabel.Text = "Out of darts, start new turn"
@@ -44,7 +45,7 @@ Public Class DartGame
         g.FillEllipse(Brushes.Black, xPosition, yPosition, 10, 10)
         g.Dispose()
         'saves the dart
-        Dim line As String = String.Format("Turn: {0}    Dart: {1}    X Coordinate: {2}    Y Coordinate: {3}", turnCount + 1, dartCount + 1, xPosition, yPosition)
+        Dim line As String = String.Format("Turn: {0}    Dart: {1}    X Coordinate: {2}    Y Coordinate: {3}", turnCount, dartCount + 1, xPosition, yPosition)
         File.AppendAllText(filePath, line & vbTab & Environment.NewLine)
 
     End Sub
