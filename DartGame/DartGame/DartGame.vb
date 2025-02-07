@@ -18,18 +18,22 @@ Public Class DartGame
 
     'dart stuff----------------
     Private Sub DartGame_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        'when space is pressed a dart is added to the board
         If e.KeyCode = Keys.Space And dartCount < 3 Then
             DrawDart()
             e.Handled = True
             dartCount += 1
             DartLabel.Text = $"Dart: {dartCount}"
-            'when space is pressed a dart is added to the board
+            'stops adding darts to the board
+            If dartCount = 3 Then
+                InstructionsLabel.Text = "Out of darts, start new turn"
+                NewTurnButton.Enabled = True
+                e.Handled = True
+            End If
+            'ensures no glitches happen from an excess of keystrokes
         Else
-            InstructionsLabel.Text = "Out of darts, start new turn"
-            NewTurnButton.Enabled = True
             e.Handled = True
         End If
-
     End Sub
 
     Private Sub DrawDart()
@@ -40,7 +44,7 @@ Public Class DartGame
         g.FillEllipse(Brushes.Black, xPosition, yPosition, 10, 10)
         g.Dispose()
         'saves the dart
-        Dim line As String = String.Format("Turn: {0}    Dart: {1}    X Coordinate: {2}    Y Coordinate: {3}", turnCount, dartCount, xPosition, yPosition)
+        Dim line As String = String.Format("Turn: {0}    Dart: {1}    X Coordinate: {2}    Y Coordinate: {3}", turnCount + 1, dartCount + 1, xPosition, yPosition)
         File.AppendAllText(filePath, line & vbTab & Environment.NewLine)
 
     End Sub
